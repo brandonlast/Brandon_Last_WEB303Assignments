@@ -1,7 +1,6 @@
 $(document).ready(function() {
     var characters = [];
 
-    // Fetch characters from JSON file using jQuery Ajax
     $.ajax({
         url: 'characters.json',
         dataType: 'json',
@@ -58,19 +57,21 @@ $(document).ready(function() {
 
 
     function searchCharacters() {
-        var searchTerm = $search.val().toLowerCase();
-
-        rows.forEach(function(row) {
+        var searchTerm = $search.val().trim().toLowerCase();
+    
+        rows.forEach(function (row) {
             var firstName = row.character.firstName.toLowerCase();
-            var matchIndex = firstName.indexOf(searchTerm);
-
-            if (matchIndex !== -1) {
-                row.$element.addClass('highlight');
+            var regex = new RegExp(searchTerm, 'g');
+            var match = firstName.match(regex);
+    
+            if (searchTerm === '' || match !== null) {
+                row.$element.addClass('filterSelected');
             } else {
-                row.$element.removeClass('highlight');
+                row.$element.removeClass('filterSelected');
             }
         });
     }
+    
 
     $('#filterAM').on('click', function() {
         filterByLastName('A', 'M');
@@ -84,16 +85,17 @@ $(document).ready(function() {
         rows.forEach(function(row) {
             var lastName = row.character.lastName.toUpperCase();
             var startLetter = lastName.charAt(0);
-
+    
             if (startLetter >= startLetterA && startLetter <= startLetterB) {
                 row.$element.show();
             } else {
                 row.$element.hide();
             }
         });
-
+    
         updateFilterCounts();
     }
+    
 
     function countCharactersByLastName(startLetterA, startLetterB) {
         var count = 0;
@@ -109,8 +111,6 @@ $(document).ready(function() {
 
         return count;
     }
-
-    // Other functions or event bindings can be added here...
 
 });
 

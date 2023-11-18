@@ -8,13 +8,10 @@
     <h1>Brandon Last - Percy Jackson</h1>
 
     <label for="search">Search: </label>
-    <input type="text" id="search" oninput="searchCharacters()">
+    <input type="text" id="search" placeholder="Search by first name">
 
-
-    <div>
-        <button onclick="filterByLastName('A', 'M')">A - M (<span id="countAM">0</span>)</button>
-        <button onclick="filterByLastName('N', 'Z')">N - Z (<span id="countNZ">0</span>)</button>
-    </div>
+    <button id="filterAM">A - M (<span id="countAM">0</span>)</button>
+    <button id="filterNZ">N - Z (<span id="countNZ">0</span>)</button>
 
 
     <table id="characters-table">
