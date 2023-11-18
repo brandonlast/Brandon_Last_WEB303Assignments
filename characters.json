@@ -1,0 +1,67 @@
+{
+    "characters": [
+        {
+            "firstName": "Percy",
+            "lastName": "Jackson",
+            "age": 17,
+            "godlyParent": "Poseidon",
+            "weapon": "Riptide",
+            "species": "Demigod",
+            "power": "Water Manipulation"
+        },
+        {
+            "firstName": "Annabeth",
+            "lastName": "Chase",
+            "age": 17,
+            "godlyParent": "Athena",
+            "weapon": "Celestial bronze knife",
+            "species": "Demigod",
+            "power": "Wisdom and Strategy"
+        },
+        {
+            "firstName": "Grover",
+            "lastName": "Underwood",
+            "age": 28,
+            "godlyParent": "N/A",
+            "weapon": "Flute",
+            "species": "Satyr",
+            "power": "Nature Sensing"
+        },
+        {
+            "firstName": "Thalia",
+            "lastName": "Grace",
+            "age": 19,
+            "godlyParent": "Zeus",
+            "weapon": "Aegis",
+            "species": "Demigod",
+            "power": "Electrokinesis"
+        },
+        {
+            "firstName": "Luke",
+            "lastName": "Castellan",
+            "age": 23,
+            "godlyParent": "Hermes",
+            "weapon": "Backbiter",
+            "species": "Demigod",
+            "power": "Trickery"
+        },
+        {
+            "firstName": "Clarisse",
+            "lastName": "La Rue",
+            "age": 18,
+            "godlyParent": "Ares",
+            "weapon": "Electric spear",
+            "species": "Demigod",
+            "power": "Combat Skills"
+        },
+        {
+            "firstName": "Nico",
+            "lastName": "Di Angelo",
+            "age": 16,
+            "godlyParent": "Hades",
+            "weapon": "Stygian Iron sword",
+            "species": "Demigod",
+            "power": "Control over the dead"
+        }
+    ]
+}

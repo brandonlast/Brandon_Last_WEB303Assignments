@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Brandon Last - Percy Jackson</h1>
+
+    <label for="search">Search: </label>
+    <input type="text" id="search" oninput="searchCharacters()">
+
+
+    <div>
+        <button onclick="filterByLastName('A', 'M')">A - M (<span id="countAM">0</span>)</button>
+        <button onclick="filterByLastName('N', 'Z')">N - Z (<span id="countNZ">0</span>)</button>
+    </div>
+
+
+    <table id="characters-table">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Godly Parent</th>
+                <th>Weapon</th>
+                <th>Species</th>
+                <th>Power</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>
