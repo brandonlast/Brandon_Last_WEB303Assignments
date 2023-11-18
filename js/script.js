@@ -1,5 +1,6 @@
 $(document).ready(function() {
     var characters = [];
+    
 
     $.ajax({
         url: 'characters.json',
@@ -21,20 +22,29 @@ $(document).ready(function() {
         $max = $('#countNZ'),
         $table = $('#characters-table');
 
-    function makeRows() {
-        characters.forEach(function(character) {
-            var $row = $('<tr></tr>');
-            $row.append($('<td></td>').text(character.firstName));
-            $row.append($('<td></td>').text(character.lastName));
-            $row.append($('<td></td>').text(character.age));
-            $row.append($('<td></td>').text(character.role));
-            $row.append($('<td></td>').text(character.power));
-            rows.push({
-                character: character,
-                $element: $row
+    
+
+        function makeRows() {
+            console.log('Characters:', characters);
+            characters.forEach(function(character) {
+                var $row = $('<tr></tr>');
+                $row.append($('<td></td>').text(character.firstName));
+                $row.append($('<td></td>').text(character.lastName));
+                $row.append($('<td></td>').text(character.age));
+                $row.append($('<td></td>').text(character.godlyParent));
+                $row.append($('<td></td>').text(character.weapon));
+                $row.append($('<td></td>').text(character.species));
+                $row.append($('<td></td>').text(character.power));
+                rows.push({
+                    character: character,
+                    $element: $row
+                });
             });
-        });
-    }
+
+            appendRows();
+        }
+        
+        
 
     function appendRows() {
         var $tbody = $('<tbody></tbody>');
@@ -59,18 +69,26 @@ $(document).ready(function() {
     function searchCharacters() {
         var searchTerm = $search.val().trim().toLowerCase();
     
-        rows.forEach(function (row) {
+        rows.forEach(function(row) {
             var firstName = row.character.firstName.toLowerCase();
-            var regex = new RegExp(searchTerm, 'g');
-            var match = firstName.match(regex);
+            var hasMatch = firstName.includes(searchTerm);
     
-            if (searchTerm === '' || match !== null) {
+            if (searchTerm === '' || hasMatch) {
                 row.$element.addClass('filterSelected');
             } else {
                 row.$element.removeClass('filterSelected');
             }
         });
+    
+        if (searchTerm === '') {
+            rows.forEach(function(row) {
+                row.$element.removeClass('filterSelected');
+            });
+        }
     }
+    
+    
+    
     
 
     $('#filterAM').on('click', function() {
