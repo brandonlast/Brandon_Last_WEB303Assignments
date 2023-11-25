@@ -2,3 +2,7 @@
     background-color: darkgreen;
     color: white;
 }
+.chevron {
+    margin-left: 5px;
+    display: inline-block;
+}
