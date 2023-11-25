@@ -7,7 +7,8 @@
             "godlyParent": "Poseidon",
             "weapon": "Riptide",
             "species": "Demigod",
-            "power": "Water Manipulation"
+            "power": "Water Manipulation",
+            "dateOfBirth": "1993-08-18"
         },
         {
             "firstName": "Annabeth",
@@ -16,7 +17,8 @@
             "godlyParent": "Athena",
             "weapon": "Celestial bronze knife",
             "species": "Demigod",
-            "power": "Wisdom and Strategy"
+            "power": "Wisdom and Strategy",
+            "dateOfBirth": "1993-07-12"
         },
         {
             "firstName": "Grover",
@@ -25,7 +27,8 @@
             "godlyParent": "N/A",
             "weapon": "Flute",
             "species": "Satyr",
-            "power": "Nature Sensing"
+            "power": "Nature Sensing",
+            "dateOfBirth": "1978-06-05"
         },
         {
             "firstName": "Thalia",
@@ -34,7 +37,8 @@
             "godlyParent": "Zeus",
             "weapon": "Aegis",
             "species": "Demigod",
-            "power": "Electrokinesis"
+            "power": "Electrokinesis",
+            "dateOfBirth": "1987-12-22"
         },
         {
             "firstName": "Luke",
@@ -43,7 +47,8 @@
             "godlyParent": "Hermes",
             "weapon": "Backbiter",
             "species": "Demigod",
-            "power": "Trickery"
+            "power": "Trickery",
+            "dateOfBirth": "1985-01-01"
         },
         {
             "firstName": "Clarisse",
@@ -52,7 +57,8 @@
             "godlyParent": "Ares",
             "weapon": "Electric spear",
             "species": "Demigod",
-            "power": "Combat Skills"
+            "power": "Combat Skills",
+            "dateOfBirth": "1993-02-31"
         },
         {
             "firstName": "Nico",
@@ -61,7 +67,8 @@
             "godlyParent": "Hades",
             "weapon": "Stygian Iron sword",
             "species": "Demigod",
-            "power": "Control over the dead"
+            "power": "Control over the dead",
+            "dateOfBirth": "1924-01-28"
         }
     ]
 }

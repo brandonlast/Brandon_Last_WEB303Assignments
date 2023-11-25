@@ -3,7 +3,7 @@ $(document).ready(function() {
     
 
     $.ajax({
-        url: 'characters.json',
+        url: '../characters.json',
         dataType: 'json',
         success: function(data) {
             characters = data.characters;
@@ -35,6 +35,7 @@ $(document).ready(function() {
                 $row.append($('<td></td>').text(character.weapon));
                 $row.append($('<td></td>').text(character.species));
                 $row.append($('<td></td>').text(character.power));
+                $row.append($('<td></td>').text(character.dateOfBirth));
                 rows.push({
                     character: character,
                     $element: $row
@@ -45,6 +46,43 @@ $(document).ready(function() {
         }
         
         
+
+    function eventListener() {
+        $('th').on('click', function() {
+            var column = $(this).index();
+            if (column !== sortColumn) {
+                sortColumn = column;
+                sortOrder = 1;
+            } else {
+                sortOrder *= -1;
+            }
+            sortRows();
+            chevrons();
+        });
+    }
+
+    function sortRows() {
+        rows.sort(function(a, b) {
+            var valueA = a.character[Object.keys(a.character)[sortColumn]];
+            var valueB = b.character[Object.keys(b.character)[sortColumn]];
+            if (typeof valueB === 'string') {
+                return sortOrder * valueA.localeCompare(valueB);
+            } else {
+                return sortOrder * (valueA - valueB);
+            }
+        });
+    }
+
+    function chevrons() {
+        $('th').each(function(index) {
+            var $chevron = $(this).find('.chevron');
+            $chevron.remove(); // Remove existing chevron
+            if (index === sortColumn) {
+                var chevronIcon = sortOrder === 1 ? '&#x25B2;' : '&#x25BC;';
+                $(this).append('<span class="chevron">' + chevronIcon + '</span>');
+            }
+        });
+    }
 
     function appendRows() {
         var $tbody = $('<tbody></tbody>');
